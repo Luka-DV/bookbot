@@ -3,12 +3,6 @@ from stats import count_book_words
 from stats import count_book_characters
 from stats import sort_char_dict
 
-if len(sys.argv) != 2:
-    print("Usage: python3 main.py <path_to_book>")
-    sys.exit(1)
-
-file_path = sys.argv[1]
-
 
 def get_book_text(file_path):
     with open(file_path) as f:
@@ -28,9 +22,15 @@ def print_report(file_path, word_count, sort_char_dict):
             print(f"{char_object["character"]}: {char_object["count"]}")
     print("============= END ===============")
     
-def main(file_path):
+def main():
     #print(get_book_text("books/frankenstein.txt"))
     #file_path = "books/frankenstein.txt"
+
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+    file_path = sys.argv[1]
 
     book_string = get_book_text(file_path)
 
@@ -45,4 +45,4 @@ def main(file_path):
     print_report(file_path, word_count, sorted_char_counts)
 
 
-main(file_path)
+main()
