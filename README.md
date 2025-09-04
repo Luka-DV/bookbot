@@ -1,5 +1,6 @@
 
 # BookBot
+(learning project)
 
 BookBot is a simple text analysis tool that scans books or text files and generates statistical information such as word count, character frequency, and other text metrics.
 
